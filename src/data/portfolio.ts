@@ -98,26 +98,26 @@ export const projects: Project[] = [
   {
     title: "Agentic RAG M&A Intelligence Engine",
     description:
-      "A 9-agent LangGraph platform that ingests pitch decks and 200+ page financial documents to automate M&A analyst work across deal sourcing and due diligence.",
+      "A multi-agent RAG platform for M&A analysts that ingests pitch decks and 200+ page financial documents and answers questions with page-level citations, expanding into a 9-agent LangGraph workflow across deal sourcing and due diligence.",
     highlights: [
-      "65% faster document turnaround, 3× analyst throughput",
-      "Modality-specific chunking: PySpark for tables, Claude Sonnet vision for charts, sliding-window for prose",
-      "Hybrid Qdrant dense + BM25 retrieval with 90% precision on numeric reasoning queries",
+      "Modality-specific chunking: OCR'd narrative text and Camelot-extracted financial tables (as Markdown) embedded into Qdrant",
+      "Cited, context-only answers run as durable, retryable Inngest workflows behind FastAPI",
+      "Agent layer targeting ~65% faster document turnaround and 3× analyst throughput, with hybrid dense + BM25 retrieval next",
     ],
-    stack: ["LangGraph", "FastAPI", "AWS Bedrock", "Azure AI Foundry", "Qdrant", "Weaviate", "PySpark"],
+    stack: ["LangGraph", "FastAPI", "Inngest", "Qdrant", "LlamaIndex", "OpenAI", "Camelot"],
     repo: gh("Agentic_RAG_for_Merger_and_Acquistion_Firms"),
     featured: true,
   },
   {
     title: "Production-Grade Agentic RAG Research Assistant",
     description:
-      "An end-to-end research assistant with scheduled ingestion, hybrid search and an agentic answer pipeline, containerised and hosted on AWS.",
+      "An agentic research assistant for AI papers, built production-style: a 12-service Docker Compose stack with daily arXiv ingestion, a FastAPI service and LLM observability, growing into hybrid search and an agentic answer pipeline.",
     highlights: [
-      "Airflow DAGs for paper ingestion and indexing",
-      "OpenSearch with BM25 + vector hybrid retrieval",
-      "LangGraph agent served through FastAPI, orchestrated with Docker Compose",
+      "Daily Airflow DAG pulls the newest arXiv papers with rate limiting and a retrying PDF cache",
+      "Typed pydantic-settings config and a multi-stage uv Docker image; OpenSearch, Ollama and Langfuse wired in",
+      "Hybrid BM25 + vector search and a LangGraph agent (retrieve, grade, rewrite, answer) on the roadmap",
     ],
-    stack: ["LangGraph", "FastAPI", "Airflow", "OpenSearch", "Docker Compose", "AWS"],
+    stack: ["FastAPI", "Airflow", "OpenSearch", "Ollama", "Langfuse", "Docker Compose"],
     repo: gh("Production_Grade_Agentic_RAG_Research_Assistant"),
     featured: true,
   },
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     highlights: [
       "Daily DAG written with the TaskFlow API, split into extract, transform and load tasks",
       "HttpHook for the API call and PostgresHook for loading, with credentials kept in Airflow connections",
-      "Runs locally as a containerised Airflow stack via the Astro CLI and Docker Compose",
+      "Runs as a containerised Airflow stack via the Astro CLI, with connections defined as code",
     ],
     stack: ["Apache Airflow", "Astro", "PostgreSQL", "Docker", "Python"],
     repo: gh("ETL_pipeline_using_Apache_Airflow_Astro_PostgreSQL"),
