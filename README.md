@@ -1,5 +1,7 @@
 # Arjun Mageswaran — Portfolio
 
+**Live:** https://arjunmageswaran.vercel.app/
+
 Personal portfolio for **Arjun Mageswaran**, AI/LLM engineer in Sydney. A single-page site built with **Next.js 16 (App Router)**, **React 19** and **Tailwind CSS v4**, exported as fully static files so it can be hosted anywhere.
 
 It covers skills, experience (Valeon Partners, Deckoviz Space Labs), education and featured projects, with a few interactive touches: a 3D intro, a cursor-reactive ripple background, scroll-tracking rails and optional background music.
