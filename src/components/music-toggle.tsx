@@ -19,7 +19,7 @@ export function MusicToggle({ src }: { src: string }) {
         {[0, 1, 2, 3].map((i) => (
           <span
             key={i}
-            className={`w-[2px] rounded-full bg-accent ${playing ? "animate-eq" : "h-1"}`}
+            className={`w-[2px] rounded-full bg-accent ${playing ? "animate-eq" : ["h-1.5", "h-3", "h-1", "h-2"][i]}`}
             style={playing ? { animationDelay: `${i * -0.22}s` } : undefined}
           />
         ))}

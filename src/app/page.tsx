@@ -130,7 +130,7 @@ export default function Home() {
               </p>
             </div>
 
-            <h1 className="mt-8 text-5xl font-semibold leading-[1.02] tracking-tight sm:text-7xl">
+            <h1 className="mt-8 text-[clamp(2.5rem,12.5vw,3rem)] font-semibold leading-[1.02] tracking-tight sm:text-7xl">
               {profile.name.split(" ")[0]}{" "}
               <span className="bg-gradient-to-r from-accent via-accent-2 to-accent bg-[length:200%_auto] bg-clip-text text-transparent">
                 {profile.name.split(" ").slice(1).join(" ")}

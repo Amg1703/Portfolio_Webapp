@@ -295,3 +295,10 @@ html[data-intro="seen"] .intro-overlay {
 .intro-overlay[data-phase="launch"] .intro-music {
   animation: intro-out 0.3s ease forwards;
 }
+
+/* Intro on phones: the 360px orbit rings and 128px monogram would overflow narrow screens */
+@media (max-width: 480px) {
+  .intro-scene {
+    transform: scale(0.72);
+  }
+}

@@ -35,7 +35,7 @@ export function Dock({ resume }: { resume: string }) {
   return (
     <nav
       aria-label="Sections"
-      className="fixed inset-x-0 bottom-4 z-20 mx-auto flex w-fit items-center gap-1 rounded-2xl border border-accent/30 bg-surface/70 p-1.5 shadow-xl shadow-accent/10 ring-1 ring-accent-2/20 ring-offset-0 backdrop-blur-xl sm:bottom-6"
+      className="fixed inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-20 mx-auto flex w-fit items-center gap-0.5 rounded-2xl border border-accent/30 bg-surface/70 p-1.5 shadow-xl shadow-accent/10 ring-1 ring-accent-2/20 ring-offset-0 backdrop-blur-xl sm:bottom-6 sm:gap-1"
     >
       {items.map((it) => (
         <a
@@ -43,7 +43,7 @@ export function Dock({ resume }: { resume: string }) {
           href={`#${it.id}`}
           aria-label={it.label}
           aria-current={active === it.id ? "true" : undefined}
-          className={`group relative flex size-10 items-center justify-center rounded-xl transition-all [&>svg]:size-[18px] ${
+          className={`group relative flex size-9 items-center justify-center rounded-xl sm:size-10 transition-all [&>svg]:size-[18px] ${
             active === it.id ? "bg-accent-soft text-accent" : "text-muted hover:-translate-y-1 hover:bg-bg hover:text-fg"
           }`}
         >
@@ -58,7 +58,7 @@ export function Dock({ resume }: { resume: string }) {
         href={resume}
         download
         aria-label="Download resume"
-        className="group relative flex h-10 items-center rounded-xl bg-fg px-3 font-mono text-xs font-medium text-bg transition-opacity hover:opacity-85"
+        className="group relative flex h-9 items-center rounded-xl bg-fg px-2.5 font-mono sm:h-10 sm:px-3 text-xs font-medium text-bg transition-opacity hover:opacity-85"
       >
         CV
       </a>
